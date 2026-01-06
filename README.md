@@ -1,6 +1,17 @@
 # Movie Recommendation System
 
 A machine learning-based movie recommendation system that suggests movies based on user preferences and movie similarities.
+Excited to share my Movie Recommendation System built using Machine Learning and NLP techniques.
+
+🔹 Implemented a Content-Based Recommendation Engine using movie metadata such as genres, overview, keywords, cast, and crew.
+🔹 Applied text preprocessing, CountVectorizer, and Cosine Similarity to generate accurate recommendations.
+🔹 Designed an interactive frontend using Streamlit for real-time user interaction.
+🔹 Integrated movie posters using the TMDB API to enhance user experience.
+
+🛠 Tech Stack:
+Python | Pandas | NumPy | Scikit-learn | NLP | Streamlit
+
+🚀 This project helped me understand how real-world recommendation systems work, from data preprocessing to deployment.
 
 ## Files
 
