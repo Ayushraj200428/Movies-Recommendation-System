@@ -2,6 +2,11 @@ import os
 import pickle
 import streamlit as st
 
+# Load data first
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+movies = pickle.load(open(os.path.join(BASE_DIR, 'movie_list.pkl'), 'rb'))
+similarity = pickle.load(open(os.path.join(BASE_DIR, 'similarity.pkl'), 'rb'))
+
 def recommend(movie):
     index = movies[movies['title'] == movie].index[0]
     distances = sorted(list(enumerate(similarity[index])), reverse=True, key=lambda x: x[1])
@@ -12,10 +17,6 @@ def recommend(movie):
     return recommended_movie_names
 
 st.header('Movie Recommender System')
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-
-movies = pickle.load(open(os.path.join(BASE_DIR, 'movie_list.pkl'), 'rb'))
-similarity = pickle.load(open(os.path.join(BASE_DIR, 'similarity.pkl'), 'rb'))
 
 movie_list = movies['title'].values
 selected_movie = st.selectbox(
