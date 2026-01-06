@@ -4,8 +4,9 @@ import streamlit as st
 
 # Load data first
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-movies = pickle.load(open(os.path.join(BASE_DIR, 'movie_list.pkl'), 'rb'))
-similarity = pickle.load(open(os.path.join(BASE_DIR, 'similarity.pkl'), 'rb'))
+movies = pickle.load(open("movie_list.pkl", "rb"))
+similarity_path = os.path.join(BASE_DIR, "similarity.pkl")
+similarity = pickle.load(open(similarity_path, "rb"))
 
 def recommend(movie):
     index = movies[movies['title'] == movie].index[0]
